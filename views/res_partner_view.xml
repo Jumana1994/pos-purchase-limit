@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_purchase_limit_view" model="ir.ui.view">
+        <field name="name">pos_purchase_limit</field>
+        <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="barcode" position="after">
+                    <field name="purchase_limit"/>
+                    <field name="amount" attrs="{'invisible':[('purchase_limit','=',False)]}"/>
+                </field>
+            </field>
+    </record>
+
+</odoo>
